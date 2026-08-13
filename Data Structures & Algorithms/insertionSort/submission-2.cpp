@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<vector<Pair>> insertionSort(vector<Pair>& pairs) {
+       vector<vector<Pair>>res;
+
+       for (int i =0;i<pairs.size();i++){
+        int j=i-1;
+        while(j>=0 && pairs[j].key>pairs[j+1].key){
+            swap(pairs[j],pairs[j+1]);
+            j--;
+        }
+
+        res.push_back(pairs);
+       }
+
+       return res;
+    }
+};
